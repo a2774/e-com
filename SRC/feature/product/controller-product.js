@@ -1,7 +1,8 @@
 const Product = require("../product/modules-product");
 
 module.exports.productadd = async (req, res) => {
-  const { name, desc, price, imageUrl, category, sizes } = req.body;
+  const { name, desc, price, category, sizes } = req.body;
+  const imageUrl = req.file.filename;
   try {
     const product = new Product({
       name,

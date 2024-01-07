@@ -1,12 +1,12 @@
 
 const express = require('express');
 const productController = require('../product/controller-product');
-const {uploads, storage} = require('../../../middileware/fileuploads');
+const uploads = require('../../../middileware/fileuploads');
 const router = express.Router();
 
 
 // upload.single('imageUrl'),
-router.post('/productadd',uploads.single('imageUrl'), productController.productadd);
+router.post('/productadd', uploads.single('imageUrl'), productController.productadd);
 router.get('/getproducts', productController.getproduct);
 router.get('/gebyid/:id', productController.getbyid);
 router.get('/productupdate/:id', productController.updateproduct);
